@@ -6,13 +6,30 @@ print("Comillas: \" " + "Barra: \\ " + " \t Tabulador" + "\n Salto linea " )
 print(100 + 120)
 print("-------- FIN PRINT -------- \n")
 
-#Formatear cadenas
-print("-------- FORMATEAR CADENAS --------")
-valor_actual = 99
-valor_nuevo = "XX"
-print("Valor actual {} nuevo valor {}".format(valor_actual, valor_nuevo))
-print(f"Valor actual {valor_actual} nuevo valor {valor_nuevo}")
-print("-------- FIN FORMATEAR CADENAS -------- \n")
+#Operadores
+print("-------- OPERADORES --------")
+print("""Suma: +
+Resta: -
+Multiplicación: *
+División: /
+Cociente: //
+Resto: %
+Potencia: **
+Raíz cuadrada: **0.5""")
+print("-------- FIN OPERADORES -------- \n")
+
+#Operadores lógicos
+print("-------- OPERADORES LOGICOS --------")
+print("""Igual a: ==
+Diferente a: !=
+Mayor que: >
+Menor que: <
+Mayor o igual que: >=
+Menor o igual que: <=
+y: and
+o: or
+no: not""")
+print("-------- FIN OPERADORES LOGICOS -------- \n")
 
 #Tipos de datos
 print("-------- TIPOS DE DATOS --------")
@@ -29,17 +46,13 @@ print(f"Conversión número entero {num1} a decimal [float()] {float(num1)} tipo
 print(f"Conversión número decimal {num2} a entero [int()] {int(num2)} tipo {type(int(num2))}")
 print("-------- FIN TIPOS DE DATOS -------- \n")
 
-#Operadores
-print("-------- OPERADORES --------")
-print("""Suma: +
-Resta: -
-Multiplicación: *
-División: /
-Cociente: //
-Resto: %
-Potencia: **
-Raíz cuadrada: **0.5""")
-print("-------- FIN OPERADORES -------- \n")
+#Formatear cadenas
+print("-------- FORMATEAR CADENAS --------")
+valor_actual = 99
+valor_nuevo = "XX"
+print("Valor actual {} nuevo valor {}".format(valor_actual, valor_nuevo))
+print(f"Valor actual {valor_actual} nuevo valor {valor_nuevo}")
+print("-------- FIN FORMATEAR CADENAS -------- \n")
 
 #Redondeo - round(num, ndigits)
 print("-------- REDONDEO --------")
@@ -72,6 +85,9 @@ hola_mundo = "Hola mundo"
 numeros = "123456"
 alfabetico = "abcdefg"
 cadena = "Hola \n mundo"
+parrafo = "Prueba texto para funcion"
+mituple = ("ps1", "ps2", "ps3")
+midict = {"nombre": "Jose", "apellidos": "Barros"}
 
 print("----- Análisis -----")
 print(f"Método count() | Test cuenta repeticiones de 'Hola' en 'Hola mundo': {hola_mundo.count('Hola')}")
@@ -110,9 +126,11 @@ print("----- Separación y unión -----")
 print(f"Método split() | Test separar cadena por defecto ('1 2 3 4 5 6'.split()) '1 2 3 4 5 6': {'1 2 3 4 5 6'.split()}")
 print(f"Método split() | Test separar cadena por guiones ('1-2-3'.split('-')) '1-2-3': {'1-2-3'.split('-')}")
 print(f"Método splitlines() | Test dividir con salto de linea 'Hola \\n mundo': {cadena.splitlines()}")
-print(f"Método partition() | Test decimales PENDIENTE")
-print(f"Método rpartition() | Test decimales PENDIENTE")
-print(f"Método join() | Test decimales PENDIENTE")
+print(f"Método partition() | Test partition parte texto en tres partes {parrafo.partition('texto')}")
+print(f"Método rpartition() | Test rpartition parte texto en tres partes {parrafo.rpartition('texto')}")
+print(f"Método join() | Test join tuple sin separador {''.join(mituple)}")
+print(f"Método join() | Test join tuple con separador '#' {'#'.join(mituple)}")
+print(f"Método join() | Test join diccionario con separador '#' {'#'.join(midict)}")
 print("------------------------------")
 print("-------- FIN METODOS STRINGS -------- \n")
 
@@ -121,9 +139,9 @@ print("-------- PROPIEDADES STRINGS --------")
 print(f"Concatenar esta cadena con +" + " cadena nueva")
 print(f"Multiplicar linea *3 \n"*3)
 print(f"Determinar su longitud con len('Hola mundo'): {len(hola_mundo)}")
-print(f"Verificar su contenido  in")
-print(f"Verificar su contenido  not in")
-print("-------- FIN PROPIEDADES STRINGS --------")
+print(f"Verificar su contenido  in 'Hola' in 'Hola mundo': {'Hola' in hola_mundo}")
+print(f"Verificar su contenido  not in 'Hola' not in 'Hola mundo': {'Hola' not in hola_mundo}")
+print("-------- FIN PROPIEDADES STRINGS -------- \n")
 
 #Listas
 print("-------- LISTAS --------")
@@ -133,6 +151,83 @@ print(f"Listas: juegos -> {lista_juegos} y consolas -> {lista_consolas}")
 print(f"Indexado juegos: {lista_juegos[0:2]}")
 print(f"Número de elementos consolas: {len(lista_consolas)}")
 print(f"Concatenación: {lista_consolas + lista_juegos}")
-print("-------- FIN LISTAS --------")
+lista_juegos.append('Death Stranding')
+print(f"Método append() | Test append añadir 'Death Stranding' a la lista de juegos {lista_juegos}")
+lista_juegos.pop(1)
+print(f"Método pop() | Test pop eliminar elemento de la posición 1 {lista_juegos}")
+lista_juegos.sort()
+print(f"Método sort() | Test sort ordenar lista {lista_juegos}")
+lista_juegos.reverse()
+print(f"Método reverse() | Test reverse invertir orden de la lista {lista_juegos}")
+print("-------- FIN LISTAS -------- \n")
+
+#Diccionarios
+mi_diccionario = {"Título":"Final Fantasy", "Genero":"rpg", "Desarrolladora":"SquareEnix"}
+print("-------- DICCIONARIOS --------")
+print(mi_diccionario)
+print(f"Acceso a Desarrolladora en el diccionario {mi_diccionario['Desarrolladora']}")
+print("-------- FIN DICCIONARIOS -------- \n")
+
+#Tuples
+mi_tuple = (1, "dos", [3.33,"cuatro"], (5.0, 6))
+lista_tuple = list(mi_tuple)
+a, b, c, d = mi_tuple
+print("-------- TUPLES --------")
+print(mi_tuple)
+print(f"Pintar posición 3: {mi_tuple[2]}")
+print(f"Transformar a lista list(mi_tuple): {lista_tuple}")
+print(f"Pintar unpacking a: {a}")
+print(f"Pintar unpacking b: {b}")
+print(f"Pintar unpacking c: {c}")
+print(f"Pintar unpacking d: {d}")
+print("-------- FIN TUPLES -------- \n")
+
+#Sets
+print("-------- SETS --------")
+mi_set_a = {1, 2,"tres"}
+mi_set_b = {3,"tres"}
+print(mi_set_a)
+mi_set_a.add(5)
+print(f"Método add() | Test add {mi_set_a}")
+mi_set_c = mi_set_a.copy()
+print(f"Método copy() | Test copy {mi_set_c}")
+mi_set_c.clear()
+print(f"Método clear() | Test clear {mi_set_c}")
+
+print(f"Método difference() | Test clear {mi_set_c}")
+
+print(f"Método difference_update() | Test clear {mi_set_c}")
+
+print(f"Método discard() | Test clear {mi_set_c}")
+
+print(f"Método intersection() | Test clear {mi_set_c}")
+
+print(f"Método intersection_update() | Test clear {mi_set_c}")
+
+print(f"Método isdisjoint() | Test clear {mi_set_c}")
+
+print(f"Método issubset() | Test clear {mi_set_c}")
+
+print(f"Método issuperset() | Test clear {mi_set_c}")
+
+print(f"Método pop() | Test clear {mi_set_c}")
+print(f"Método remove() | Test clear {mi_set_c}")
+print(f"Método symmetric_difference() | Test clear {mi_set_c}")
+print(f"Método symmetric_difference_update() | Test clear {mi_set_c}")
+
+print(f"Método union() | Test clear {mi_set_c}")
+
+print(f"Método update() | Test clear {mi_set_c}")
+
+
+print("-------- FIN SETS -------- \n")
+
+
+
+
+
+#Template
+print("-------- TEMPLATE --------")
+print("-------- FIN TEMPLATE -------- \n")
 #Inputs
 #print("Texto introducido:" + input("Introduce texto: "))
