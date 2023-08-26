@@ -87,7 +87,7 @@ alfabetico = "abcdefg"
 cadena = "Hola \n mundo"
 parrafo = "Prueba texto para funcion"
 mituple = ("ps1", "ps2", "ps3")
-midict = {"nombre": "Jose", "apellidos": "Barros"}
+midict = {"nombre":"Jose", "apellidos":"Barros"}
 
 print("----- Análisis -----")
 print(f"Método count() | Test cuenta repeticiones de 'Hola' en 'Hola mundo': {hola_mundo.count('Hola')}")
@@ -218,13 +218,62 @@ print(f"Método symmetric_difference_update() | Test clear {mi_set_c}")
 print(f"Método union() | Test clear {mi_set_c}")
 
 print(f"Método update() | Test clear {mi_set_c}")
-
-
 print("-------- FIN SETS -------- \n")
 
+#If
+print("-------- IF --------")
+if 12 > 6:
+    print("Test if 12 > 6")
+elif false != true and true:
+    print("Test elif")
+else:
+    print("Test else")
+print("-------- FIN IF -------- \n")
 
+#Bucles for
+print("-------- FOR --------")
 
+for lj in lista_juegos:
+    print(f"Valores lista: {lj}")
 
+for t in mi_tuple:
+    print(f"Valores tupla: {t}")
+
+for d in mi_diccionario.values():
+    print(f"Valores diccionario: {d}")
+
+for k, v in mi_diccionario.items():
+    print(f"Clave/Valor diccionario: {k} -> {v}")
+
+print("-------- FIN FOR -------- \n")
+
+#Bucles while
+print("-------- WHILE --------")
+i = 0
+while 2 > i:
+    print(f"Test while {i}")
+    i = i + 1
+else:
+    print(f"Final while {i}")
+
+print("-------- FIN WHILE -------- \n")
+
+#range()
+print("-------- RANGE --------")
+rangos = range(5, 30, 2)
+print(f"range(5, 30, 2) {list(rangos)}")
+print("-------- FIN RANGE -------- \n")
+
+#enumerate()
+print("-------- ENUMERATE --------")
+enum1 = enumerate("Final")
+enum2 = enumerate("Fantasy", 2)
+enum3 = enumerate([4.25, 7, 2])
+print(f"enumerate('Final') {list(enum1)}")
+print(f"enumerate('Fantasy',2) {list(enum2)}")
+for i, n in enum3:
+    print(f"Enumerate recorrido con for Indice/Numero {i} -> {n}")
+print("-------- FIN ENUMERATE -------- \n")
 
 #Template
 print("-------- TEMPLATE --------")
