@@ -1,5 +1,6 @@
 from random import *
 
+#test git
 lista_juegos = ["Final Fantasy", "Super Mario", "Sonic"]
 mi_tuple = (1, "dos", [3.33,"cuatro"], (5.0, 6))
 mi_diccionario = {"Título":"Final Fantasy", "Genero":"rpg", "Desarrolladora":"SquareEnix"}
