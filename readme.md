@@ -1,9 +1,15 @@
 # Guía python
 
-## ????
+## Importar y definir funciones en python
 
-- Importar función: **from** modulo **import** funcion
-- Definir función: **def** nombre_funcion():
+- Importar función: `from modulo import funcion`
+- Definir y llamar funciones: 
+```python
+def nombre_funcion(): #Declaración de función
+    print("Mi nueva función")
+
+nombre_funcion() #Llamada a funcion
+```
 
 ## Operadores
 
@@ -112,7 +118,7 @@ numero_dos_dig = round(100/3, 2)
 numero_tres_dig = round(100/3, 3)
 ```
 
-### Index - String ??????
+### Index - String - *PENDIENTE*
 Función: index(valor, inicio, fin)
 
 **Ejemplos:**
@@ -125,21 +131,66 @@ print(parrafo.rindex("explorar"))
 print(parrafo[2])
 ```
 
-### Substrings - ????
+### Substrings - *PENDIENTE*
 
 ```python
 
 ```
 
+### Open, Read y Write
+- Abrir un archivo: `open('archivo', 'modo')`
+  - archivo -> documento a abrir
+  - modo -> Parametros de apertura (r, a, w, x):
+    - **Read**(Lectura): `open('archivo.txt', 'r')`
+    - **Append**(Añadir): `open('archivo.txt', 'a')`
+    - **Write**(Escritura): `open('archivo.txt', 'w')`
+    - **Create**(Crear): `open('archivo.txt', 'x')`
+La función `open()` devuelve un objeto de tipo archivo al que se le pueden aplicar los metodos:
+- Leer un archivo de texto: `obj_archivo.read()`
+- Pintar una linea del archivo: `obj_archivo.readline()`
+- Devolver una lista con las lineas: `obj_archivo.readlines()` (Usar solo con archivos pequeños)
+  
+**Ejemplos read:**
+```python
+archivo = open('text.txt')
+print(archivo.read()) #Pinta el contenido del fichero
+print(archivo.readline()) #Pinta una linea del archivo por cada ejecución del readline
+print(archivo.readline().rstrip()) #rstrip evita el salto de linea en los archivos
+print(archivo.readline().upper()) #upper pinta la linea en mayúsculas 
+print(archivo.readlines()) #Devuelve una lista 
+archivo.close()
+```
+- Escribir en el archivo: `obj_archivo.write('Texto')`
+
+**Ejemplos write:**
+```python
+archivo = open('text.txt', 'w') #Con w sustituye todo el archivo
+#archivo = open('text.txt', 'a') #Con a añade al final del archivo
+archivo.write("Nuevo texto") #Pinta en una línea
+archivo.write('''Texto en
+varias
+líneas''')
+archivo.close()
+```                    
+- Cerrar archivo abierto: `obj_archivo.close()`
+
+**Nota:** El objeto obj_archivo una vez abierto se puede iterar con un bucle for: `for linea in obj_archivo:`
+
+### Directorios
+
+#### Os - *Importado*
+Se importa -> **import** os
+Lo usamos para trabajar con archivos que están en dirtectorios diferentes a nuestro código.
+
+- Obtener directorio actual: `os.getcwd()`
+- Cambiar de directorio: `os.chdir(ruta)`
+- Crear carpeta/carpetas: `os.makedirs(ruta)`
 
 
-
-
-
-
-### Path - *Importado*
-La clase path permite leer estructuras de carpetas y archivos.
+#### Path - *Importado*
 Se importa -> **from** pathlib **import** Path
+La clase path permite leer estructuras de carpetas y archivos.
+
 
 - Directorio raiz: `Path.home()`
 - Ruta relativa: `Path("Carpeta_1", "Carpeta_2", "archivo.md")`
