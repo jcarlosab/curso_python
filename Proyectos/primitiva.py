@@ -4,10 +4,6 @@ from random import *
 tambor_principal = list(range(1, 50))
 tambor_reintrego = list(range(1, 10))
 
-def mezclar(tambor):
-    shuffle(tambor)
-    return tambor
-
 def obtener_resultado(tambor):
     resultado = []
     rango = 0
@@ -17,7 +13,7 @@ def obtener_resultado(tambor):
         rango = 1
 
     for num in range(rango):
-        resultado.append(mezclar(tambor).pop(randint(0, len(tambor) - 1)))
+        resultado.append(shuffle(tambor).pop(randint(0, len(tambor) - 1)))
     return sorted(resultado)
 
 def apuesta():
