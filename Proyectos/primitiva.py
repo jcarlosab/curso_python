@@ -11,7 +11,6 @@ def obtener_resultado(tambor):
         rango = 6
     else:
         rango = 1
-
     for num in range(rango):
         resultado.append(shuffle(tambor).pop(randint(0, len(tambor) - 1)))
     return sorted(resultado)
@@ -19,7 +18,7 @@ def obtener_resultado(tambor):
 def apuesta():
     numeros = []
     reintegro = []
-    print("Introduce 6 números del 1 al 49")
+    print("Introduce 6 números del 1 al 49") #Pendiente de añadir comprobación
     for num in range(6):
         numeros.append(int(input(f"Número {num}: ")))
     reintegro.append(int(input("Introduce un número del 1 al 9 para reintegro: ")))

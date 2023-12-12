@@ -12,6 +12,7 @@ from random import choice
 lista_palabras = ["coche", "animal", "tortuga", "juego", "ordenador", "teclado", "portatil"]
 vidas = "♥♥♥♥♥♥"
 aux = []
+
 def inicio_juego(lstPalabras):
     lstLetras = list(choice(lista_palabras))
     palabraOculta = ocultar_revelar_letra("",lstLetras)
@@ -28,6 +29,7 @@ def ocultar_revelar_letra(valor, lstLetras):
             palabraOculta += "_"
     palabraOculta += "  ]"
     return palabraOculta
+
 def pedir_letra():
     valor = ""
     while len(valor) != 1:
@@ -35,6 +37,7 @@ def pedir_letra():
         if len(valor) != 1:
             print("Valor no valido")
     return valor
+
 def comprobar(valor, lstLetrasPalabra):
     palabraOculta = ocultar_revelar_letra(valor, lstLetrasPalabra)
     if valor in lstLetrasPalabra:
