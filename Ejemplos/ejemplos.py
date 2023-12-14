@@ -207,30 +207,19 @@ def ejemplos_sets():
     print(f"Método copy() | Test copy {mi_set_c}")
     mi_set_c.clear()
     print(f"Método clear() | Test clear {mi_set_c}")
-
     print(f"Método difference() | Test clear {mi_set_c}")
-
     print(f"Método difference_update() | Test clear {mi_set_c}")
-
     print(f"Método discard() | Test clear {mi_set_c}")
-
     print(f"Método intersection() | Test clear {mi_set_c}")
-
     print(f"Método intersection_update() | Test clear {mi_set_c}")
-
     print(f"Método isdisjoint() | Test clear {mi_set_c}")
-
     print(f"Método issubset() | Test clear {mi_set_c}")
-
     print(f"Método issuperset() | Test clear {mi_set_c}")
-
     print(f"Método pop() | Test clear {mi_set_c}")
     print(f"Método remove() | Test clear {mi_set_c}")
     print(f"Método symmetric_difference() | Test clear {mi_set_c}")
     print(f"Método symmetric_difference_update() | Test clear {mi_set_c}")
-
     print(f"Método union() | Test clear {mi_set_c}")
-
     print(f"Método update() | Test clear {mi_set_c}")
     print("-------- FIN SETS -------- \n")
 
@@ -363,6 +352,8 @@ def ejemplo_funcion_args(dato_1, dato_2, *args):
 # *kwargs
 def ejemplo_funcion_kwargs(**kwargs):
     print(f"kwargs: {kwargs}")
+
+
 
 ejemplos_print()
 #ejemplos_input()
