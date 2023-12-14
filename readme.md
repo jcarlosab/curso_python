@@ -1,24 +1,55 @@
-# Comandos básicos python
+# Guía python
 
-## Indice
-
-- [Comandos básicos python](#comandos-básicos-python)
-  - [Indice](#indice)
+- [Guía python](#guía-python)
+  - [Importar y definir funciones en python](#importar-y-definir-funciones-en-python)
   - [Operadores](#operadores)
   - [Tipos de datos](#tipos-de-datos)
     - [Strings](#strings)
-  - [if](#if)
-  - [for](#for)
-  - [while](#while)
-  - [Print](#print)
-  - [Input](#input)
-  - [Index](#index)
+      - [Metodos string *Pendiente*](#metodos-string-pendiente)
+  - [Funciones](#funciones)
+    - [Print](#print)
+    - [Input](#input)
+    - [Round - Importada](#round---importada)
+    - [Index](#index)
     - [Substrings](#substrings)
-  - [Open, Read y Write](#open-read-y-write)
-  - [Directorios](#directorios)
-    - [Os - *Importado*](#os---importado)
-    - [Path - *Importado*](#path---importado)
+    - [Strings - *Pendiente*](#strings---pendiente)
+      - [Análisis](#análisis)
+      - [Transformación](#transformación)
+      - [Separación y unión](#separación-y-unión)
+    - [Propiedades strings](#propiedades-strings)
+    - [Listas](#listas)
+    - [Diccionarios](#diccionarios)
+    - [Tuples](#tuples)
+    - [Sets](#sets)
+    - [if](#if)
+    - [for](#for)
+    - [while](#while)
+    - [range](#range)
+    - [enumerate](#enumerate)
+    - [zip](#zip)
+    - [min y max](#min-y-max)
+    - [random](#random)
+    - [Compresión de listas](#compresión-de-listas)
+    - [Funciones](#funciones-1)
+      - [return](#return)
+      - [Parámetro \*args](#parámetro-args)
+      - [Parámetro \*\*kwargs](#parámetro-kwargs)
+    - [Open, Read y Write](#open-read-y-write)
+    - [Directorios](#directorios)
+      - [Os - *Importado*](#os---importado)
+      - [Path - *Importado*](#path---importado)
 
+
+## Importar y definir funciones en python
+
+- Importar función: `from modulo import funcion`
+- Definir y llamar funciones: 
+```python
+def nombre_funcion(): #Declaración de función
+    print("Mi nueva función")
+
+nombre_funcion() #Llamada a funcion
+```
 
 ## Operadores
 
@@ -66,52 +97,26 @@ La \ indica que debe ser tratado como un caracter especial.
 | Barra             |    \\     |
 
 **Notas:**
+
+```python
+texto = "Se pueden " + "concatenar"
+```
+
+**Notas:**
+
 ```python
 type(variable) #Nos indica de que tipo es una variable.
 float(variable) #Convierte un entero a decimal
 int(variable) #Convierte un decimal a entero
 ```
+#### Metodos string *Pendiente*
+Analisis
+Transformación
+Separación y unión
 
-## if
-Estructuras condicionales:
-```python
-if 12 > 6:
-  print("Test if 12 > 6")
-elif false != true and true:
-  print("Test elif")
-else:
-  print("Test else")
-```
-## for
-```python
-lista = ["Dato1", "Dato2", "Dato3"]
-mi_tuple = (1, "dos", [3.33,"cuatro"], (5.0, 6))
-mi_diccionario = {"Título":"Documento 1", "Formato":".doc", "Tamano":"15mb"}
+## Funciones
 
-for valor in lista:
-  print(f"Valores lista: {valor}")
-
-for t in mi_tuple:
-  print(f"Valores tupla: {t}")
-
-for d in mi_diccionario.values():
-  print(f"Valores diccionario: {d}")
-
-for k, v in mi_diccionario.items():
-  print(f"Clave/Valor diccionario: {k} -> {v}")
-```
-## while
-```python
-i = 0
-while 2 > i:
-  print(f"Test while {i}")
-  i = i + 1
-else:
-  print(f"Final while {i}")
-```
-
-
-## Print
+### Print
 
 ```python
 print("Hola mundo") #Pintar una línea de texto
@@ -134,15 +139,26 @@ print("Valor actual {} nuevo valor {}".format(valor_actual, valor_nuevo))
 print(f"Permite pintar variables usando {variable}")
 ```
 
-## Input
+### Input
 
 Muestra el texto y permite almacenar lo escrito
 
 ```python
 input("Introduce texto: ")
 ```
+### Round - Importada
+Función: round(valor, numero_digitos)
+- valor -> indicamos la cifra a redondear.
+- numero_digitos -> (Opcional) indicamos el número de digitos a redondear.
 
-## Index
+**Ejemplos:**
+```python
+numero = round(100/3)
+numero_dos_dig = round(100/3, 2)
+numero_tres_dig = round(100/3, 3)
+```
+
+### Index
 Función: index(valor, inicio, fin)
 
 **Ejemplos:**
@@ -163,7 +179,90 @@ mi_texto[0:4] #Muestra el texto de la posición dada "Hola"
 mi_texto[2::3] #Muestra el texto de la posición dada "lmd"
 mi_texto[::-1] #Muestra el texto al revés "odnum_aloH"
 ```
-## Open, Read y Write
+### Strings - *Pendiente*
+
+#### Análisis
+- Método count() | Test cuenta repeticiones de 'Hola' en 'Hola mundo': 1
+- Método find() | Test buscar 'Hola' en 'Hola mundo': 0
+- Método find() | Test buscar '123' en 'Hola mundo': -1
+- Método rfind() | Test buscar desde el final 'Hola' en 'Hola mundo': 0
+- Método index() | Test buscar 'Hola' en 'Hola mundo': 0
+- Método rindex() | Test buscar desde el final 'Hola' en 'Hola mundo': 0
+- Método startswith() | Test 'Hola mundo' empieza con 'Hola': True
+- Método endswith() | Test 'Hola mundo' acaba con 'Hola': False
+- Método isdigit() | Test dígitos '123456': True
+- Método isnumeric() | Test números '123456': True
+- Método isdecimal() | Test decimales '123456': True
+- Método isalnum() | Test alfanuméricos '123456': True
+- Método isalpha() | Test alfabéticos 'abcdefg': True
+- Método islower() | Test todo minúsculas 'abcdefg': True
+- Método isupper() | Test todo mayúsculas 'abcdefg': False
+- Método isprintable() | Test imprimibles 'abcdefg' (no son caracteres especiales): True
+- Método isspace() | Test espacios '   ' solo espacios: True
+
+#### Transformación
+- Método capitalize() | Test primera letra en mayúscula 'abcdefg': Abcdefg
+- Método encode() | Test codifica la cadena con el mapa de caracteres especificado y retorna una instancia del tipo byte 'abcdefg': b'abcdefg'
+- Método replace() | Test reemplazar 'mundo' por 'mundo2' en 'Hola mundo': Hola mundo2
+- Método lower() | Test todo a minúsculas 'ABC': abc
+- Método upper() | Test todo a mayúsculas 'abc': ABC
+- Método swapcase() | Test cambia minúsculas por mayúsculas 'Ja Ja Ja Ja Ja': jA jA jA jA jA
+- Método strip() | Test quita espacios en blanco izquierda y derecha en '  Hola   ': Hola FIN
+- Método lstrip() | Test quita espacios en blanco izquierda  en '  Hola   ': Hola    FIN
+- Método rstrip() | Test quita espacios en blanco derecha  en '  Hola   ':   Hola FIN
+- Método center() | Test alinear al centro 'abc':         abc         
+- Método ljust() | Test alinear a la izquierda 'abc': abc                 
+- Método rjust() | Test alinear a la derecha 'abc':                  abc
+
+#### Separación y unión
+- Método split() | Test separar cadena por defecto ('1 2 3 4 5 6'.split()) '1 2 3 4 5 6': ['1', '2', '3', '4', '5', '6']
+- Método split() | Test separar cadena por guiones ('1-2-3'.split('-')) '1-2-3': ['1', '2', '3']
+- Método splitlines() | Test dividir con salto de linea 'Hola \n mundo': ['Hola ', ' mundo']
+- Método partition() | Test partition parte texto en tres partes ('Prueba ', 'texto', ' para funcion')
+- Método rpartition() | Test rpartition parte texto en tres partes ('Prueba ', 'texto', ' para funcion')
+- Método join() | Test join tuple sin separador ps1ps2ps3
+- Método join() | Test join tuple con separador '#' ps1#ps2#ps3
+- Método join() | Test join diccionario con separador '#' nombre#apellidos
+
+### Propiedades strings
+*Pendiente*
+### Listas
+*Pendiente*
+### Diccionarios
+*Pendiente*
+### Tuples
+*Pendiente*
+### Sets
+*Pendiente*
+
+### if
+*Pendiente*
+### for
+*Pendiente*
+### while
+*Pendiente*
+### range
+*Pendiente*
+### enumerate
+*Pendiente*
+### zip
+*Pendiente*
+### min y max
+*Pendiente*
+### random
+*Pendiente*
+### Compresión de listas
+*Pendiente*
+### Funciones
+*Pendiente* 
+#### return
+*Pendiente*
+#### Parámetro *args
+*Pendiente*
+#### Parámetro **kwargs
+*Pendiente*
+
+### Open, Read y Write
 - Abrir un archivo: `open('archivo', 'modo')`
   - archivo -> documento a abrir
   - modo -> Parametros de apertura (r, a, w, x):
@@ -202,9 +301,9 @@ archivo.close()
 
 **Nota:** El objeto obj_archivo una vez abierto se puede iterar con un bucle for: `for linea in obj_archivo:`
 
-## Directorios
+### Directorios
 
-### Os - *Importado*
+#### Os - *Importado*
 Se importa -> **import** os
 Lo usamos para trabajar con archivos que están en dirtectorios diferentes a nuestro código.
 
@@ -229,7 +328,7 @@ os.path.split(ruta) #Devuelve la ruta C:\\Users\\Carpeta y el nombre de base
 - Borrar directorio: `os.rmdir(ruta)` (Indicar ruta completa de carpeta a borrar)
 - Crear carpeta/carpetas: `os.makedirs(ruta)`
 
-### Path - *Importado*
+#### Path - *Importado*
 Se importa -> **from** pathlib **import** Path
 La clase path permite leer estructuras de carpetas y archivos.
 
