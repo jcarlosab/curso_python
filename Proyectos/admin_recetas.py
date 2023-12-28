@@ -76,11 +76,11 @@ def eliminar_categoria(ruta):
     Path.rmdir(ruta)
 
 
-def listar_recetas(ruta, categoria):
+def listar_recetas(ruta):
     opcion = 'x'
-    directorio = Path(ruta, categoria)
+    directorio = Path(ruta)
 
-    while not opcion.isnumeric() or int(opcion) not in range(1, total_recetas(ruta)):
+    while not opcion.isnumeric() or int(opcion) not in range(1, total_recetas(directorio) + 1):
         limpiar_consola()
         contador = 1
         for archivo in directorio.glob("**/*.txt"):
@@ -88,17 +88,21 @@ def listar_recetas(ruta, categoria):
             contador += 1
         opcion = input("Indica el número de receta: ")
 
-    ruta = Path(ruta, categoria, os.listdir(directorio)[int(opcion) - 1])
+    ruta = Path(ruta, os.listdir(directorio)[int(opcion) - 1])
 
     return ruta
 
 
 def leer_receta(ruta):
-    ruta_receta = Path(listar_recetas(ruta, listar_categorias(ruta)))
-    archivo = open(ruta_receta)
-    print(archivo.read())  # Pinta el contenido del fichero
-    input("\n Presiona enter para volver a inicio")
-    archivo.close()
+    ruta_categoria = Path(ruta, listar_categorias(ruta))
+    if total_recetas(ruta_categoria) != 0:
+        ruta_receta = Path(listar_recetas(ruta_categoria))
+        archivo = open(ruta_receta)
+        print(archivo.read())  # Pinta el contenido del fichero
+        input("\n Presiona enter para volver a inicio")
+        archivo.close()
+    else:
+        input("Categoría vacía presiona enter para volver a inicio")
 
 
 def crear_receta(ruta):
@@ -120,9 +124,14 @@ def crear_receta(ruta):
 
 
 def eliminar_receta(ruta):
-    receta_eliminada = Path(listar_recetas(ruta, listar_categorias(ruta)))
-    input(f"Eliminada receta {receta_eliminada.name} ...presiona enter para volver a inicio")
-    receta_eliminada.unlink()
+    ruta_categoria = Path(ruta, listar_categorias(ruta))
+    if total_recetas(ruta_categoria) != 0:
+        receta_eliminada = Path(listar_recetas(ruta_categoria))
+        input(f"Eliminada receta {receta_eliminada.name} ...presiona enter para volver a inicio")
+        receta_eliminada.unlink()
+    else:
+        input("Categoría vacía presiona enter para volver a inicio")
+
 
 def total_recetas(ruta):
     cantidad = 0
